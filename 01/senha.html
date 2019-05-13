@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery - Reprograma</title>
+
+</head>
+
+<body>
+
+    <input type="password" name="senha" id="senha" />
+    
+    <br>
+    <br>
+
+    <div id="forca">Força: </div>
+
+    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+    <script>
+
+        $(document).ready(function() {
+
+            $('#senha').keyup(function () {
+                var senha = $(this).val();
+                
+                var forca = 0;
+
+                
+
+                //mascara de verificação. um código pré-definido que você consegue encontrar sem grande esforço. 
+                // você chama o RegExp assim --> new RegExp
+                var regNumerico = new RegExp(/[0-9]/i);
+                var regText = new RegExp(/[a-z]/i);
+                var regEspecial = new RegExp(/[^a-z0-9]/i);
+
+
+                if(senha.length > 4){
+                    forca += 25;
+                }
+                //.test() --> evento de teste que verifica se o y.test(x), ou seja, se y === x se sim ele retorna true se não retorna false.
+                if(regNumerico.test(senha)){
+                    forca += 25;
+                }
+                if(regText.test(senha)){
+                    forca += 25;
+                } 
+                if (regEspecial.test(senha)){
+                    forca += 25;
+                }
+
+                let aceito = "Não";
+                if(forca>= 75){
+                    aceito = "sim";
+                }
+
+
+                $('#forca').html(`Força:  ${forca} - Senha: ${senha} - Aceito: ${aceito}`);
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>

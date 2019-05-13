@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>jQuery - Reprograma</title>
+    </head>
+    <body>
+
+       <a href="">Google</a>
+
+        <img src="http://www.google.com/google.jpg" border="0" />
+
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+        <script>
+            /*
+            metodo de modificaçlão de atriburo
+            .attr('nome do atributo', 'o que você quer mudar')
+            */
+            $(document).ready(function () {
+                $('a').attr('href', 'https://google.com.br');
+                $('img').attr('border', "1");
+                $('img').attr('width', '100%').attr('height', '50%');//mudar mais de um atributo 
+            });
+            
+        </script>
+    </body>
+</html>

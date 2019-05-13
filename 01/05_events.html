@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>jQuery - Reprograma</title>
+
+</head>
+
+<body>
+
+    <p>Clique aqui.</p>
+
+    <br> Name:
+    <input type="text" name="nome">
+    <input type="password" name="password" placeholder="password" id="senha">
+
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script>
+       /*
+        Eventos:
+
+        $("p").click(function () {
+            alert("p clicado");
+        }); --> mesma coisa do on(), porém só a função click
+
+        $('p').on("função do botão que você quer monitorar o evento", function(){
+            alert("p clicado")
+        }); --> executa mais de uma vez a ação 
+
+        $('p').one("click", function(){
+            alert("p clicado")
+        }); --> executa a ação só uma vez
+        */
+
+        $('p').one('click', function (){
+            alert('ação de clique única');
+        })
+
+        $('p').click(function () {
+            alert('p clicado');
+        })
+
+        /*.focus(function(){
+            ação que vai acontecer quando esse evento for acionado
+        })
+        */
+        $(document).ready(function () {
+            // $("input").focus(function () {
+            //     $(this).css("background-color", "#00a458");
+            // }); --> adiciona um atributo de css a esse(this) elemento
+
+            $('input').focus(function () {
+                // $(this).addClass('fundoVerde')
+                // $(this).removeClass('fundoVerde')
+
+                $(this).toggleClass('fundoVerde')
+            })
+
+            
+        });
+
+        
+
+
+
+        // $("p").mouseenter(function() {
+        //     alert("hello, it's me");
+        // });
+    </script>
+
+</body>
+
+</html>
