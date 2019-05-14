@@ -54,11 +54,18 @@
                     aceito = "sim";
                 }
 
+                //Indicador de sucesso
+                aceito = (forca >= 75);
+                console.log(aceito);
 
-                $('#forca').html(`Força:  ${forca} - Senha: ${senha} - Aceito: ${aceito}`);
-            });
-
+                $(this).toggleClass('sucesso', aceito);
+                $(this).toggleClass('erro', !aceito);
+            
+                $('#forca').html(`Força:${forca} - Senha:${senha} - Aceito:${ aceito ? "Sim" : "Não" }`);
+            })
         });
+
+
 
     </script>
 </body>
