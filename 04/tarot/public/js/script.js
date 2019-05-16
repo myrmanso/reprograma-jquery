@@ -1,5 +1,5 @@
 function cartaAleatoria(){ 
-    $.getJSON("tarot.json", trocarCarta);
+    $.get("http://localhost:3000/cartas", trocarCarta);
    /*(padrão que el vai retoras, status)*/
 }
 
